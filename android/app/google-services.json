@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "35154838808",
+    "project_id": "jetchat-d3642",
+    "storage_bucket": "jetchat-d3642.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:35154838808:android:a5e5106eb8b3267be94a6d",
+        "android_client_info": {
+          "package_name": "com.example.chat_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUyTvjtkn8rEdV5mQq59BT06nZCgQSWZk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
