@@ -76,7 +76,7 @@ class _MyContactsPageState extends State<MyContactsPage> {
                         const Icon(
                           Icons.contact_page,
                           size: 80,
-                          color: Colors.blueAccent,
+                          color: Colors.purpleAccent,
                         ),
                         const SizedBox(height: 20),
                         Text(
@@ -207,7 +207,7 @@ class _MyContactsPageState extends State<MyContactsPage> {
                                   // Button for sending a message
                                   IconButton(
                                     icon: const Icon(Icons.message,
-                                        color: Colors.blue),
+                                        color: Colors.purpleAccent),
                                     onPressed: () {
                                       chatController.startChat(user);
                                     },

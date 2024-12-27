@@ -27,7 +27,7 @@ class EditDetailsButton extends StatelessWidget {
           children: [
             const Icon(
               Icons.edit,
-              color: Color(0xFF2661FA),
+              color: Colors.purpleAccent,
             ),
             const SizedBox(width: 20),
             const Expanded(

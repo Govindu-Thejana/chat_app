@@ -6,6 +6,8 @@ import 'package:http/http.dart' as http;
 import 'package:logger/logger.dart';
 
 class UploadImagePage extends StatefulWidget {
+  const UploadImagePage({super.key});
+
   @override
   _UploadImagePageState createState() => _UploadImagePageState();
 }

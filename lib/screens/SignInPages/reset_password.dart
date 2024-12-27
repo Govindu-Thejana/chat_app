@@ -6,7 +6,6 @@ class ResetPasswordPage extends StatefulWidget {
   const ResetPasswordPage({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
   _ResetPasswordPageState createState() => _ResetPasswordPageState();
 }
 
@@ -19,117 +18,124 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      body: SizedBox(
-        width: double.infinity,
-        height: size.height,
-        child: Stack(
-          alignment: Alignment.center,
-          children: <Widget>[
-            Positioned(
-              top: 0,
-              right: 0,
-              child: Image.asset(
-                "assets/images/top1.png",
-                width: size.width,
-              ),
-            ),
-            Positioned(
-              top: 0,
-              right: 0,
-              child: Image.asset(
-                "assets/images/top2.png",
-                width: size.width,
-              ),
-            ),
-            Positioned(
-              top: -45,
-              right: -45,
-              child: Image.asset(
-                "assets/1.png",
-                width: size.width * 0.63,
-              ),
-            ),
-            Positioned(
-              bottom: 0,
-              right: 0,
-              child: Image.asset(
-                "assets/images/bottom1.png",
-                width: size.width,
-              ),
-            ),
-            Positioned(
-              bottom: 0,
-              right: 0,
-              child: Image.asset(
-                "assets/images/bottom2.png",
-                width: size.width,
-              ),
-            ),
-            Column(
+      backgroundColor: const Color(0xFFF7F8FA), // Soft light background
+      body: Center(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Container(
+                // App Logo
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 20),
+                  child: Image.asset(
+                    "assets/new_logo.png", // Add your app logo here
+                    height: 240,
+                  ),
+                ),
+
+                // Title: RESET PASSWORD
+                Align(
                   alignment: Alignment.centerLeft,
-                  padding: const EdgeInsets.symmetric(horizontal: 40),
                   child: Text(
                     "RESET PASSWORD",
                     style: GoogleFonts.acme(
                       fontWeight: FontWeight.bold,
-                      color: Colors.blue,
-                      fontSize: 42,
+                      color: Colors.purpleAccent,
+                      fontSize: 36,
                     ),
                     textAlign: TextAlign.left,
                   ),
                 ),
-                SizedBox(height: size.height * 0.03),
-                Container(
-                  alignment: Alignment.center,
-                  margin: const EdgeInsets.symmetric(horizontal: 40),
-                  child: TextField(
-                    controller: _emailController,
-                    decoration: const InputDecoration(labelText: "Email"),
+                const SizedBox(height: 20),
+
+                // Subtitle
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "Enter your email address.",
+                    style: GoogleFonts.openSans(
+                      color: Colors.grey.shade700,
+                      fontSize: 16,
+                    ),
+                    textAlign: TextAlign.left,
                   ),
                 ),
-                SizedBox(height: size.height * 0.03),
-                Container(
-                  alignment: Alignment.centerRight,
-                  margin:
-                      const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+                const SizedBox(height: 30),
+
+                // Email Field
+                TextFormField(
+                  controller: _emailController,
+                  decoration: InputDecoration(
+                    labelText: "Email",
+                    labelStyle: TextStyle(
+                      color: Colors.grey.shade700,
+                      fontWeight: FontWeight.w500,
+                    ),
+                    filled: true,
+                    fillColor: Colors.white,
+                    contentPadding: const EdgeInsets.symmetric(
+                        vertical: 15, horizontal: 20),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: BorderSide(color: Colors.grey.shade300),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: BorderSide(color: Colors.purpleAccent),
+                    ),
+                  ),
+                  keyboardType: TextInputType.emailAddress,
+                ),
+                const SizedBox(height: 30),
+
+                // Reset Password Button
+                SizedBox(
+                  width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
                       _userController.resetPassword(
-                          email: _emailController.text, context: context);
+                        email: _emailController.text,
+                        context: context,
+                      );
                     },
                     style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.all(0),
+                      backgroundColor: Colors.purpleAccent,
+                      padding: const EdgeInsets.symmetric(vertical: 14),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(80.0),
+                        borderRadius: BorderRadius.circular(12),
                       ),
                     ),
-                    child: Container(
-                      alignment: Alignment.center,
-                      height: 50.0,
-                      width: size.width * 0.5,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(80.0),
-                        color: const Color.fromARGB(
-                            255, 36, 211, 74), // Green color
+                    child: Text(
+                      "Send Reset Link",
+                      style: GoogleFonts.openSans(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                        color: Colors.white,
                       ),
-                      padding: const EdgeInsets.all(0),
-                      child: Text(
-                        "RESET PASSWORD",
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.acme(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 20),
+
+                // Go Back Button
+                TextButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text(
+                    "Go Back",
+                    style: GoogleFonts.openSans(
+                      fontSize: 14,
+                      color: Colors.grey.shade600,
+                      decoration: TextDecoration.underline,
                     ),
                   ),
                 ),
               ],
             ),
-          ],
+          ),
         ),
       ),
     );

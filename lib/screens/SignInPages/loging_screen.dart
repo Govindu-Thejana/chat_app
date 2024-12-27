@@ -8,7 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:logger/logger.dart';
 import 'package:provider/provider.dart';
-import 'package:sign_in_button/sign_in_button.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -85,118 +84,123 @@ class _LoginScreenState extends State<LoginScreen> {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      body: SizedBox(
-        width: double.infinity,
-        height: size.height,
-        child: Stack(
-          alignment: Alignment.center,
-          children: <Widget>[
-            Positioned(
-              top: 0,
-              right: 0,
-              child: Image.asset(
-                "assets/images/top1.png",
-                width: size.width,
+      backgroundColor:
+          const Color(0xFFF7F8FA), // Light background for modern look
+      body: Center(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              // Logo
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 5),
+                child: Image.asset(
+                  "assets/new_logo.png", // Path to your logo in the assets folder
+                  height: 240, // Adjust height as needed
+                ),
               ),
-            ),
-            Positioned(
-              top: 0,
-              right: 0,
-              child: Image.asset(
-                "assets/images/top2.png",
-                width: size.width,
-              ),
-            ),
-            Positioned(
-              top: -45,
-              right: -45,
-              child: Image.asset(
-                "assets/1.png",
-                width: size.width * 0.63,
-              ),
-            ),
-            Positioned(
-              bottom: 0,
-              right: 0,
-              child: Image.asset(
-                "assets/images/bottom1.png",
-                width: size.width,
-              ),
-            ),
-            Positioned(
-              bottom: 0,
-              right: 0,
-              child: Image.asset(
-                "assets/images/bottom2.png",
-                width: size.width,
-              ),
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Container(
+
+              // Page Title
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 40),
+                child: Align(
                   alignment: Alignment.centerLeft,
-                  padding: const EdgeInsets.symmetric(horizontal: 40),
                   child: Text(
                     "SIGN IN",
                     style: GoogleFonts.acme(
                       fontWeight: FontWeight.bold,
-                      color: Colors.blue,
+                      color: Colors.purpleAccent,
                       fontSize: 42,
                     ),
-                    textAlign: TextAlign.left,
                   ),
                 ),
-                SizedBox(height: size.height * 0.03),
-                Form(
-                  key: _formKey,
-                  child: Column(
-                    children: <Widget>[
-                      Container(
-                        alignment: Alignment.center,
-                        margin: const EdgeInsets.symmetric(horizontal: 40),
-                        child: TextFormField(
-                          controller: _emailController,
-                          decoration: const InputDecoration(labelText: "Email"),
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Please enter your email';
-                            }
-                            return null;
-                          },
-                        ),
-                      ),
-                      SizedBox(height: size.height * 0.03),
-                      Container(
-                        alignment: Alignment.center,
-                        margin: const EdgeInsets.symmetric(horizontal: 40),
-                        child: TextFormField(
-                          controller: _passwordController,
-                          obscureText: _obscureText,
-                          decoration: InputDecoration(
-                            labelText: "Password",
-                            suffixIcon: IconButton(
-                              icon: Icon(
-                                _obscureText
-                                    ? Icons.visibility
-                                    : Icons.visibility_off,
-                                color: Colors.grey,
-                              ),
-                              onPressed: _togglePasswordVisibility,
-                            ),
+              ),
+              const SizedBox(height: 20),
+
+              // Form Fields
+              Form(
+                key: _formKey,
+                child: Column(
+                  children: <Widget>[
+                    // Email Field
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 40),
+                      child: TextFormField(
+                        controller: _emailController,
+                        decoration: InputDecoration(
+                          labelText: "Email",
+                          labelStyle: TextStyle(
+                            color: Colors.grey.shade700,
+                            fontWeight: FontWeight.bold,
                           ),
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Please enter your password';
-                            }
-                            return null;
-                          },
+                          filled: true,
+                          fillColor: Colors.white,
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12),
+                            borderSide: BorderSide(color: Colors.grey.shade300),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12),
+                            borderSide: BorderSide(color: Colors.purpleAccent),
+                          ),
                         ),
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter your email';
+                          }
+                          return null;
+                        },
                       ),
-                      Container(
+                    ),
+                    const SizedBox(height: 20),
+
+                    // Password Field
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 40),
+                      child: TextFormField(
+                        controller: _passwordController,
+                        obscureText: _obscureText,
+                        decoration: InputDecoration(
+                          labelText: "Password",
+                          labelStyle: TextStyle(
+                            color: Colors.grey.shade700,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          suffixIcon: IconButton(
+                            icon: Icon(
+                              _obscureText
+                                  ? Icons.visibility
+                                  : Icons.visibility_off,
+                              color: Colors.grey,
+                            ),
+                            onPressed: _togglePasswordVisibility,
+                          ),
+                          filled: true,
+                          fillColor: Colors.white,
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12),
+                            borderSide: BorderSide(color: Colors.grey.shade300),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12),
+                            borderSide: BorderSide(color: Colors.purpleAccent),
+                          ),
+                        ),
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter your password';
+                          }
+                          return null;
+                        },
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+
+                    // Forgot Password Link
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 40),
+                      child: Align(
                         alignment: Alignment.centerRight,
-                        margin: const EdgeInsets.symmetric(
-                            horizontal: 40, vertical: 10),
                         child: GestureDetector(
                           onTap: () {
                             Navigator.push(
@@ -210,112 +214,125 @@ class _LoginScreenState extends State<LoginScreen> {
                             "Forgot your password?",
                             style: TextStyle(
                               fontSize: 12,
-                              color: Color(0XFF2661FA),
+                              color: Colors.purpleAccent,
                             ),
                           ),
                         ),
                       ),
-                      SizedBox(height: size.height * 0.05),
-                      Container(
-                        alignment: Alignment.centerRight,
-                        margin: const EdgeInsets.symmetric(
-                            horizontal: 40, vertical: 10),
-                        child: ElevatedButton(
-                          onPressed: _isLoading ? null : _login,
-                          style: ElevatedButton.styleFrom(
-                            padding: const EdgeInsets.all(0),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(80.0),
-                            ),
-                          ),
-                          child: Container(
-                            alignment: Alignment.center,
-                            height: 50.0,
-                            width: size.width * 0.5,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(80.0),
-                              color: const Color.fromARGB(255, 36, 211, 74),
-                            ),
-                            child: _isLoading
-                                ? const CircularProgressIndicator(
-                                    valueColor: AlwaysStoppedAnimation<Color>(
-                                        Colors.white),
-                                  )
-                                : Text(
-                                    "SIGN IN",
-                                    textAlign: TextAlign.center,
-                                    style: GoogleFonts.acme(
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white,
-                                        fontSize: 18),
-                                  ),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        alignment: Alignment.centerRight,
-                        margin: const EdgeInsets.symmetric(
-                            horizontal: 50, vertical: 10),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            const Text(
-                              "Don't Have an Account?  ",
-                              style: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black,
-                              ),
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const SignUpPage(),
-                                  ),
-                                );
+                    ),
+                    const SizedBox(height: 30),
+
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 40),
+                      child: ElevatedButton(
+                        onPressed: _isLoading
+                            ? null
+                            : () {
+                                _login(); // Calls the _login method defined in your class
                               },
-                              child: const Text(
-                                "Sign up",
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.purpleAccent, // Button color
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 14), // Button height
+                          shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.circular(12), // Rounded corners
+                          ),
+                          minimumSize: const Size(double.infinity,
+                              50), // Button expands to full width
+                        ),
+                        child: _isLoading
+                            ? const CircularProgressIndicator(
+                                valueColor:
+                                    AlwaysStoppedAnimation<Color>(Colors.white),
+                              )
+                            : const Text(
+                                "Sign In",
                                 style: TextStyle(
-                                  fontSize: 12,
+                                  fontSize: 16,
                                   fontWeight: FontWeight.bold,
-                                  color: Color(0xFF2661FA),
+                                  color: Colors.white, // Text color
                                 ),
                               ),
+                      ),
+                    ),
+
+                    // Sign Up Link
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 40),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text(
+                            "Don't have an account? ",
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Colors.black,
                             ),
-                          ],
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const SignUpPage(),
+                                ),
+                              );
+                            },
+                            child: const Text(
+                              "Sign up",
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.purpleAccent,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 30),
+
+                    // Google Sign-In Button
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 40),
+                      child: GestureDetector(
+                        onTap: () {
+                          _userController.signInWithGoogle(context: context);
+                        },
+                        child: Container(
+                          width: double.infinity,
+                          padding: const EdgeInsets.symmetric(vertical: 14),
+                          decoration: BoxDecoration(
+                            color: const Color(0xFFEFEFEF),
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(color: Colors.grey.shade300),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                "assets/1111.png",
+                                width: 24,
+                              ),
+                              const SizedBox(width: 10),
+                              const Text(
+                                "Sign in with Google",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black87,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
-                      Container(
-                        alignment: Alignment.bottomRight,
-                        margin: const EdgeInsets.symmetric(
-                            horizontal: 15, vertical: 1),
-                        child: SignInButtonBuilder(
-                          text: 'Sign in with Google',
-                          textColor: Colors.black87,
-                          image: Image.asset(
-                            "assets/1111.png",
-                            width: 25,
-                          ),
-                          onPressed: () {
-                            _userController.signInWithGoogle(context: context);
-                          },
-                          backgroundColor: const Color(0xFFEFEFEF),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 16, vertical: 8),
-                        ),
-                      )
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
-          ],
+              ),
+            ],
+          ),
         ),
       ),
     );

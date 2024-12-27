@@ -310,7 +310,7 @@ class _ChatPageState extends State<ChatPage> {
     ChatController chatcontroller = ChatController(context);
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.purpleAccent,
         leading: GestureDetector(
           onTap: () {
             Navigator.push(
@@ -432,7 +432,7 @@ class _ChatPageState extends State<ChatPage> {
                                 vertical: 5, horizontal: 10),
                             decoration: BoxDecoration(
                               color: isCurrentUser
-                                  ? Colors.blue[200]
+                                  ? Colors.purpleAccent[200]
                                   : Colors.grey[300],
                               borderRadius: BorderRadius.circular(15),
                             ),

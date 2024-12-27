@@ -174,7 +174,7 @@ class _HomeScreenState extends State<HomeScreen> {
     _updateFilteredChats();
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.purpleAccent,
         title: ifSearch
             ? TextField(
                 onChanged: (value) {
@@ -193,9 +193,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               )
             : const Text(
-                "ChatJet Messages",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
+  "chitchat",
+  style: TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+    color: Colors.white, // Set the text color to white
+  ),
+),
         actions: [
           IconButton(
             icon: Icon(
@@ -318,7 +322,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           );
         },
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.purpleAccent,
         child: const Icon(Icons.add),
       ),
     );

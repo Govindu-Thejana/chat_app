@@ -36,10 +36,16 @@ class _StatusScreenState extends State<StatusScreen> {
             : 'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp')
         : 'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp';
 
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Status"),
+   return Scaffold(
+  appBar: AppBar(
+    title: const Text(
+      "Status",
+      style: TextStyle(
+        color: Colors.white, // Font color for the title
       ),
+    ),
+    backgroundColor: Colors.purpleAccent, // Background color for the AppBar
+  ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

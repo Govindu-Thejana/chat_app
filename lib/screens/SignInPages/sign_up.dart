@@ -59,7 +59,8 @@ class _SignUpPageState extends State<SignUpPage> {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      // ignore: sized_box_for_whitespace
+      backgroundColor: const Color(0xFFF7F8FA), // Soft background color
+      // Light background for consistency
       body: SingleChildScrollView(
         child: Form(
           key: _formKey,
@@ -69,49 +70,19 @@ class _SignUpPageState extends State<SignUpPage> {
             child: Stack(
               alignment: Alignment.center,
               children: <Widget>[
-                Positioned(
-                  top: 0,
-                  right: 0,
-                  child: Image.asset(
-                    "assets/images/top1.png",
-                    width: size.width,
-                  ),
-                ),
-                Positioned(
-                  top: 0,
-                  right: 0,
-                  child: Image.asset(
-                    "assets/images/top2.png",
-                    width: size.width,
-                  ),
-                ),
-                Positioned(
-                  top: -45,
-                  right: -45,
-                  child: Image.asset(
-                    "assets/1.png",
-                    width: size.width * 0.63,
-                  ),
-                ),
-                Positioned(
-                  bottom: 0,
-                  right: 0,
-                  child: Image.asset(
-                    "assets/images/bottom1.png",
-                    width: size.width,
-                  ),
-                ),
-                Positioned(
-                  bottom: 0,
-                  right: 0,
-                  child: Image.asset(
-                    "assets/images/bottom2.png",
-                    width: size.width,
-                  ),
-                ),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
+                    // Add the logo at the top
+                    Padding(
+                      padding: const EdgeInsets.only(top: 40, bottom: 20),
+                      child: Image.asset(
+                        "assets/new_logo.png", // Path to your logo in the assets folder
+                        height: 240, // Adjust the height as needed
+                      ),
+                    ),
+
+                    // Title: REGISTER
                     Container(
                       alignment: Alignment.centerLeft,
                       padding: const EdgeInsets.symmetric(horizontal: 40),
@@ -119,13 +90,15 @@ class _SignUpPageState extends State<SignUpPage> {
                         "REGISTER",
                         style: GoogleFonts.acme(
                           fontWeight: FontWeight.bold,
-                          color: Colors.blue, // Green color
+                          color: Colors.purpleAccent,
                           fontSize: 42,
                         ),
                         textAlign: TextAlign.left,
                       ),
                     ),
                     SizedBox(height: size.height * 0.03),
+
+                    // Username Field
                     Container(
                       alignment: Alignment.center,
                       margin: const EdgeInsets.symmetric(horizontal: 40),
@@ -144,6 +117,8 @@ class _SignUpPageState extends State<SignUpPage> {
                       ),
                     ),
                     SizedBox(height: size.height * 0.03),
+
+                    // Mobile Number Field
                     Container(
                       alignment: Alignment.center,
                       margin: const EdgeInsets.symmetric(horizontal: 40),
@@ -163,6 +138,8 @@ class _SignUpPageState extends State<SignUpPage> {
                       ),
                     ),
                     SizedBox(height: size.height * 0.03),
+
+                    // Email Field
                     Container(
                       alignment: Alignment.center,
                       margin: const EdgeInsets.symmetric(horizontal: 40),
@@ -180,6 +157,8 @@ class _SignUpPageState extends State<SignUpPage> {
                       ),
                     ),
                     SizedBox(height: size.height * 0.03),
+
+                    // Password Field
                     Container(
                       alignment: Alignment.center,
                       margin: const EdgeInsets.symmetric(horizontal: 40),
@@ -198,6 +177,8 @@ class _SignUpPageState extends State<SignUpPage> {
                         },
                       ),
                     ),
+
+                    // Error Message
                     if (_errorMessage != null)
                       Padding(
                         padding: const EdgeInsets.symmetric(
@@ -208,41 +189,37 @@ class _SignUpPageState extends State<SignUpPage> {
                         ),
                       ),
                     SizedBox(height: size.height * 0.05),
-                    Container(
-                      alignment: Alignment.centerRight,
-                      margin: const EdgeInsets.symmetric(
-                          horizontal: 40, vertical: 10),
+                    // Sign Up Button
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 40),
                       child: ElevatedButton(
                         onPressed: () {
-                          _signUp(context);
+                          _signUp(
+                              context); // Calls the _signUp method defined in your class
                         },
                         style: ElevatedButton.styleFrom(
-                          padding: const EdgeInsets.all(0),
+                          backgroundColor: Colors.purpleAccent, // Button color
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 14), // Button height
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(80.0),
+                            borderRadius:
+                                BorderRadius.circular(12), // Rounded corners
                           ),
+                          minimumSize: const Size(
+                              double.infinity, 50), // Full-width button
                         ),
-                        child: Container(
-                          alignment: Alignment.center,
-                          height: 50.0,
-                          width: size.width * 0.5,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(80.0),
-                            color: const Color.fromARGB(
-                                255, 36, 211, 74), // Green color
-                          ),
-                          padding: const EdgeInsets.all(0),
-                          child: Text(
-                            "SIGN UP",
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.acme(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                                fontSize: 19),
+                        child: const Text(
+                          "Sign Up",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white, // Text color
                           ),
                         ),
                       ),
                     ),
+
+                    // Already Have an Account? Sign In
                     Container(
                       alignment: Alignment.centerRight,
                       margin: const EdgeInsets.symmetric(
@@ -272,7 +249,7 @@ class _SignUpPageState extends State<SignUpPage> {
                               style: TextStyle(
                                 fontSize: 12,
                                 fontWeight: FontWeight.bold,
-                                color: Color(0xFF2661FA),
+                                color: Colors.purpleAccent,
                               ),
                             ),
                           ),

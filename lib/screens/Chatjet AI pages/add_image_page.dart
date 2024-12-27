@@ -177,7 +177,7 @@ class _AddTextPageState extends State<AddTextPage> {
                     label: const Text('Update Image'),
                     style: ElevatedButton.styleFrom(
                       foregroundColor: Colors.white,
-                      backgroundColor: Colors.blueAccent,
+                      backgroundColor: const Color.fromARGB(255, 127, 68, 255),
                     ),
                   ),
                 ],

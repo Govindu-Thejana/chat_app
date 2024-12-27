@@ -26,8 +26,8 @@ class ViewMoreButton extends StatelessWidget {
         child: Row(
           children: [
             const Icon(
-              Icons.view_kanban_rounded,
-              color: Color(0xFF2661FA),
+              Icons.view_kanban_rounded, 
+              color: Colors.purpleAccent,
             ),
             const SizedBox(width: 20),
             Expanded(

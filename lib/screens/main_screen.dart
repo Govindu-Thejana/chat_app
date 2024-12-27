@@ -1,5 +1,4 @@
 import 'package:chat_app/providers/user_provider.dart';
-import 'package:chat_app/screens/ChatPages/chat_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:logger/logger.dart';
@@ -10,7 +9,6 @@ import 'package:chat_app/screens/HomePages/contact_page.dart';
 import 'package:chat_app/screens/HomePages/profile_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:simple_icons/simple_icons.dart';
-import 'package:chat_app/screens/HomePages/adapter.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

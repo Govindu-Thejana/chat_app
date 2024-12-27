@@ -1,0 +1,25 @@
+PS E:\uor\5th sem\Mobile Application\newproject\chat_app> flutterfire configure --project=chatapp-2ecc1  
+i Found 1 Firebase projects. Selecting project chatapp-2ecc1.
+✔ Which platf
+ keys & space to select)? · android, ios, macos, web, windows
+? Which Android application id (or package name) do you want to use for this configuration, e.g. 'com.exa✔ Which Android application id (or package name) do you want to use for this configuration, e.g. 'com.example.app'? · com.example.chat_app 
+i Firebase android app com.example.chat_app is not registered on Firebase project chatapp-2ecc1.
+i Registered a new Firebase android app on Firebase project chatapp-2ecc1.
+i Firebase ios app com.example.chatApp is not registered on Firebase project chatapp-2ecc1.
+i Registered a new Firebase ios app on Firebase project chatapp-2ecc1.
+i Firebase macos app com.example.chatApp registered.
+i Firebase web app chat_app (web) is not registered on Firebase project chatapp-2ecc1.
+i Registered a new Firebase web app on Firebase project chatapp-2ecc1.
+i Firebase windows app chat_app (windows) is not registered on Firebase project chatapp-2ecc1.
+i Registered a new Firebase windows app on Firebase project chatapp-2ecc1.
+Firebase configuration file lib\firebase_options.dart generated successfully with the following Firebase apps:
+
+Platform  Firebase App Id
+web       1:559214501777:web:aaf9c45a6ca00c97f24430
+android   1:559214501777:android:59c50eae655aaf08f24430
+ios       1:559214501777:ios:fdc9a88a87eec0ecf24430
+macos     1:559214501777:ios:fdc9a88a87eec0ecf24430
+windows   1:559214501777:web:4f6b94a3ad3b1201f24430
+
+Learn more about using this file and next steps from the documentation:       
+ > https://firebase.google.com/docs/flutter/setup

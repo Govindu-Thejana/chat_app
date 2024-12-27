@@ -166,7 +166,7 @@ class StatusProvider with ChangeNotifier {
         uiSettings: [
           AndroidUiSettings(
             toolbarTitle: 'Crop Status Image',
-            toolbarColor: const Color(0xFF2745B0),
+              toolbarColor: Colors.purple, // Replace with any desired color
             toolbarWidgetColor: Colors.white,
             aspectRatioPresets: [
               CropAspectRatioPreset.original,

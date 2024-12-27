@@ -66,7 +66,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
                         top: 0,
                         right: 0,
                         child: Image.asset(
-                          "assets/images/top1.png",
+                          "assets/images/top.png",
                           width: MediaQuery.of(context).size.width,
                           fit: BoxFit.cover,
                         ),
@@ -87,7 +87,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
                                       as ImageProvider,
                             ),
                             border: Border.all(
-                              color: const Color(0xFF2661FA),
+                              color: Colors.purpleAccent,
                               width: 4,
                             ),
                           ),
@@ -101,7 +101,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 30,
-                    color: Color(0xFF2661FA),
+                    color: Colors.purpleAccent,
                   ),
                 ),
                 Text(
@@ -119,7 +119,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
                   ),
                 ),
                 Text(
-                  user.bio.isNotEmpty ? user.bio : 'Hi, I am using ChatJet...',
+                  user.bio.isNotEmpty ? user.bio : 'Hi, I am using chichat...',
                   style: const TextStyle(
                     fontSize: 18,
                     color: Colors.black54,

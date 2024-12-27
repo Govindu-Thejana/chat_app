@@ -276,10 +276,10 @@ class _GeminiChatPageState extends State<GeminiChatPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'ChatJet AI',
+          ' AI Chat Page',
           style: GoogleFonts.roboto(
             textStyle: const TextStyle(
-              color: Color.fromARGB(255, 59, 60, 59),
+              color: Colors.purpleAccent,
               fontSize: 24,
               fontWeight: FontWeight.bold,
             ),
@@ -320,7 +320,7 @@ class _GeminiChatPageState extends State<GeminiChatPage> {
                     controller: _controller,
                     focusNode: _focusNode,
                     decoration: InputDecoration(
-                      labelText: 'Chat with ChatJet AI ',
+                      labelText: 'Chat with AI ',
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),
@@ -397,7 +397,7 @@ class _GeminiChatPageState extends State<GeminiChatPage> {
           margin: const EdgeInsets.symmetric(vertical: 5),
           padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
-            color: message.isFromUser ? Colors.blueAccent : Colors.grey[300],
+            color: message.isFromUser ? Colors.purpleAccent : Colors.grey[300],
             borderRadius: BorderRadius.circular(15),
           ),
           child: Column(

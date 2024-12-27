@@ -185,7 +185,7 @@ class _AllContactsPageState extends State<AllContactsPage> {
                                             : Icons.add_circle,
                                         color: isContact
                                             ? Colors.red
-                                            : Colors.blue,
+                                            : Colors.purpleAccent,
                                       ),
                                       onPressed: () async {
                                         if (isContact) {
