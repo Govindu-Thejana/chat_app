@@ -22,9 +22,9 @@ ChitChat is a **real-time chat application** built using **Flutter** and **Fireb
 
 ## 📸 Screenshots
 
-| Chat Screen | AI-Powered Interaction | Image Sharing |
-|------------|----------------------|--------------|
-| ![Chat](screenshots/chat_screen.png) | ![AI](screenshots/ai_interaction.png) | ![Image Sharing](screenshots/image_sharing.png) |
+ ![Chat](screenshots/chat_screen.png)  
+ ![AI](screenshots/ai_interaction.png) 
+ ![Image Sharing](screenshots/image_sharing.png) |
 
 ## 📦 Installation & Setup
 
@@ -47,12 +47,6 @@ flutter pub get
 ### **4️⃣ Run the App**
 ```bash
 flutter run
-```
-
-## 🔗 API Configuration
-To integrate **Gemini API**, add your API key in `lib/constants.dart`:
-```dart
-const String GEMINI_API_KEY = "your_api_key_here";
 ```
 
 ## 🛠️ Build APK
