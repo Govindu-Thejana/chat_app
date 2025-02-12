@@ -21,10 +21,16 @@ ChitChat is a **real-time chat application** built using **Flutter** and **Fireb
 - **Storage**: Firebase Storage
 
 ## 📸 Screenshots
+<p align="center">
 
- ![Chat](screenshots/chat_screen.png)  
- ![AI](screenshots/ai_interaction.png) 
- ![Image Sharing](screenshots/image_sharing.png) |
+<img src="assets/ss%20pages/splashscreen.png" alt="Chat" width="200"/>
+<img src="assets/ss%20pages/chat page.png" alt="chat page" width="200"/>
+<img src="assets/ss%20pages/private chat.png" alt="private chat" width="200"/>
+<img src="assets/ss%20pages/profile page.png" alt="profile page" width="200"/>
+<img src="assets/ss%20pages/Ai chat page.png" alt="Ai chat page" width="200"/>
+</p>
+
+
 
 ## 📦 Installation & Setup
 
